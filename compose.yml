@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:17
+    container_name: recaudacion_base_de_datos
+    environment:
+      POSTGRES_USER: proyecto4
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: recudadacion_fondos
+    ports:
+      - 5432:5432
+    volumes: 
+      - ./psql_data:/var/lib/postgresql/data
