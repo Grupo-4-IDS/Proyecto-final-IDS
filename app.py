@@ -48,7 +48,11 @@ def listar_causas():
             "monto_recaudado": float(causa.monto_recaudado)
         })
     return jsonify(respuesta)
-    
+
 @app.route('/causas', methods=['POST'])
 
 @app.route('/donaciones', methods=['POST'])
+
+@app.errorhandler(404)
+def error_404(error):
+    return send_file('templates/error.html'), 404
