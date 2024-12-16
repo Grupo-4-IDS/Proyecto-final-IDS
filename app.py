@@ -15,3 +15,10 @@ class Usuario(db.Model):
     cuit_cuil = db.Column(db.String(20), nullable=False, unique=True)
     contrasena = db.Column(db.String(10), nullable=False)
     fecha_registro = db.Column(db.Date, nullable=False, default=db.func.current_date)
+
+class Causa(db.Model):
+    __tablename__ = 'causas'
+    id = db.Column(db.Integer, primary_key=True)
+    descripcion = db.Column(db.Text, nullable=False)
+    meta = db.Column(db.Numeric(11, 2), nullable=False)
+    monto_recaudado = db.Column(db.Numeric(12, 2), nullable=False, default=0)
