@@ -37,7 +37,18 @@ def index():
 @app.route('/index.html', methods=['POST'])
 
 @app.route('/causas', methods=['GET'])
-
+def listar_causas():
+    causas = Causa.query.all()
+    respuesta = []
+    for causa in causas:
+        respuesta.append({
+            "id": causa.id,
+            "descripcion": causa.descripcion,
+            "meta": float(causa.meta),
+            "monto_recaudado": float(causa.monto_recaudado)
+        })
+    return jsonify(respuesta)
+    
 @app.route('/causas', methods=['POST'])
 
 @app.route('/donaciones', methods=['POST'])
