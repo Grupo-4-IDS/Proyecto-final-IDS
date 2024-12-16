@@ -30,6 +30,10 @@ class Donacion(db.Model):
     id_usuario = db.Column(db.Integer, db.ForeignKey('usuarios.id'), nullable=False)
     id_causa = db.Column(db.Integer, db.ForeignKey('causas.id'), nullable=False)
 
+@app.route('/')
+def index():
+    return send_file('templates/index.html')
+
 @app.route('/index.html', methods=['POST'])
 
 @app.route('/causas', methods=['GET'])
