@@ -50,7 +50,20 @@ def listar_causas():
     return jsonify(respuesta)
 
 @app.route('/causas', methods=['POST'])
-
+def crear_causa():
+    data = request.json
+    if not data or 'descripcion' not in data or 'meta' not in data:
+        return jsonify({"error": "Faltan datos obligatorios"}), 400
+    
+    nueva_causa = Causa(
+        descripcion=data['descripcion'],
+        meta=data['meta'],
+        monto_recaudado=0
+    )
+    db.session.add(nueva_causa)
+    db.session.commit()
+    return jsonify({"id": nueva_causa.id, "mensaje": "Causa creada con éxito"}), 201
+    
 @app.route('/donaciones', methods=['POST'])
 
 @app.errorhandler(404)
