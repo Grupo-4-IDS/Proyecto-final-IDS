@@ -1,0 +1,8 @@
+CREATE TABLE Usuarios (
+    ID SERIAL PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    cuit_cuil VARCHAR(20) NOT NULL UNIQUE,
+    contrasena VARCHAR(10) NOT NULL,
+    fecha_registro DATE NOT NULL DEFAULT CURRENT_DATE
+);
