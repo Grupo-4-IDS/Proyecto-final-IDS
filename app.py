@@ -22,3 +22,10 @@ class Causa(db.Model):
     descripcion = db.Column(db.Text, nullable=False)
     meta = db.Column(db.Numeric(11, 2), nullable=False)
     monto_recaudado = db.Column(db.Numeric(12, 2), nullable=False, default=0)
+
+class Donacion(db.Model):
+    __tablename__ = 'donaciones'
+    id = db.Column(db.Integer, primary_key=True)
+    monto = db.Column(db.Numeric(11, 2), nullable=False)
+    id_usuario = db.Column(db.Integer, db.ForeignKey('usuarios.id'), nullable=False)
+    id_causa = db.Column(db.Integer, db.ForeignKey('causas.id'), nullable=False)
