@@ -14,7 +14,7 @@ class Usuario(db.Model):
     email = db.Column(db.String(50), nullable=False, unique=True)
     cuit_cuil = db.Column(db.String(20), nullable=False, unique=True)
     contrasena = db.Column(db.String(10), nullable=False)
-    fecha_registro = db.Column(db.Date, nullable=False, default=db.func.current_date)
+    fecha_registro = db.Column(db.Date, nullable=False, default=db.func.current_date())
 
 class Causa(db.Model):
     __tablename__ = 'causas'
@@ -29,3 +29,11 @@ class Donacion(db.Model):
     monto = db.Column(db.Numeric(11, 2), nullable=False)
     id_usuario = db.Column(db.Integer, db.ForeignKey('usuarios.id'), nullable=False)
     id_causa = db.Column(db.Integer, db.ForeignKey('causas.id'), nullable=False)
+
+@app.route('/index.html', methods=['POST'])
+
+@app.route('/causas', methods=['GET'])
+
+@app.route('/causas', methods=['POST'])
+
+@app.route('/donaciones', methods=['POST'])
