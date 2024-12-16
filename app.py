@@ -34,7 +34,7 @@ class Donacion(db.Model):
 def index():
     return send_file('templates/index.html')
 
-@app.route('/index.html', methods=['POST'])
+@app.route('/usuarios', methods=['POST'])
 
 @app.route('/causas', methods=['GET'])
 def listar_causas():
