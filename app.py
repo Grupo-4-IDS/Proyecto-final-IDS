@@ -35,6 +35,20 @@ def index():
     return send_file('templates/index.html')
 
 @app.route('/usuarios', methods=['POST'])
+def registrar_usuario():
+    data = request.json
+    if not data or 'usuario' not in data or 'email' not in data or 'cuit_cuil' not in data:
+        return jsonify({"error": "Faltan datos obligatorios"}), 400
+    
+    nuevo_usuario = Usuario(
+        usuario=data['usuario'],
+        email=data['email'],
+        cuit_cuil=data['cuit_cuil'],
+        contrasena=data.get('contrasena', '1234')  
+    )
+    db.session.add(nuevo_usuario)
+    db.session.commit()
+    return jsonify({"id": nuevo_usuario.id, "mensaje": "Usuario creado con exito"}), 201
 
 @app.route('/causas', methods=['GET'])
 def listar_causas():
