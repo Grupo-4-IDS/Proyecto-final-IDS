@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort, send_file
+from flask import Flask, jsonify, request, abort, render_template, send_file
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -32,7 +32,7 @@ class Donacion(db.Model):
 
 @app.route('/')
 def index():
-    return send_file('templates/index.html')
+    return render_template('index.html')
 
 @app.route('/usuarios', methods=['POST'])
 def registrar_usuario():
@@ -49,6 +49,11 @@ def registrar_usuario():
     db.session.add(nuevo_usuario)
     db.session.commit()
     return jsonify({"id": nuevo_usuario.id, "mensaje": "Usuario creado con exito"}), 201
+
+@app.route('/causas.html')
+def causas():
+    return render_template('causas.html')
+
 
 @app.route('/causas', methods=['GET'])
 def listar_causas():
@@ -77,6 +82,11 @@ def crear_causa():
     db.session.add(nueva_causa)
     db.session.commit()
     return jsonify({"id": nueva_causa.id, "mensaje": "Causa creada con éxito"}), 201
+
+@app.route('/donaciones.html')
+def donaciones():
+    return render_template('donaciones.html')
+
     
 @app.route('/donaciones', methods=['POST'])
 def registrar_donacion():
