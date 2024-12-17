@@ -96,8 +96,11 @@ def registrar_donacion():
     causa.monto_recaudado += data['monto']
     db.session.add(nueva_donacion)
     db.session.commit()
-    return jsonify({"id": nueva_donacion.id, "mensaje": "Donación registrada con éxito"}), 201
+    return jsonify({"id": nueva_donacion.id, "mensaje": "Donación registrada con exito"}), 201
 
 @app.errorhandler(404)
 def error_404(error):
     return send_file('templates/error.html'), 404
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
