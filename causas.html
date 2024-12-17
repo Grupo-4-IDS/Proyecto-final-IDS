@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
         <title>Proyecto 4 Patas</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     </head>
     <body>
         <header>
             <div class="header-container">
-                <img src="logo.jpg" alt="Logo" class="logo">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="logo">
                 <a href="index.html">
                     <h1>Proyecto 4 Patas</h1>
                 </a>
@@ -33,14 +33,14 @@
                         <p>
                             Luna fue rescatada de la calle después de haber estado abandonada durante días. Llegó con heridas graves y desnutrida, pero gracias a la ayuda de nuestros voluntarios, hoy está sana y feliz.
                         </p>
-                        <img src="luna.jpg" alt="Luna" class="story-image">
+                        <img src="{{ url_for('static', filename='luna.jpg') }}" alt="Luna" class="story-image">
                     </div>
                     <div class="story">
                         <h3>Max</h3>
                         <p>
                             Max es un perrito valiente que fue encontrado en un estado crítico. Después de varias semanas de cuidados intensivos, hoy puede correr y jugar gracias a la ayuda de personas como tú.
                         </p>
-                        <img src="max.jpg" alt="Max" class="story-image">
+                        <img src="{{ url_for('static', filename='max.jpg') }}" alt="Max" class="story-image">
                     </div>
                 </div>
                 <div class="progress-section">

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
     <title>Proyecto 4 Patas</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 <body>
     <header>
         <div class="header-container">
-            <img src="logo.jpg" alt="Logo" class="logo">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="logo">
             <a href="index.html">
                 <h1>Proyecto 4 Patas</h1>
             </a>
@@ -46,7 +46,7 @@
             </div>
             <section class="donation-form">
                 <h3>Realiza tu donación</h3>
-                <form action="https://www.paypal.com/donate" method="get" target="_blank">
+                <form>
                     <div class="input-container">
                         <div class="input">
                             <label for="amount">Cantidad a donar:</label>
