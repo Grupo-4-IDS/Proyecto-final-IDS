@@ -1,0 +1,367 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-box {
+    position: relative;
+    width: 100%;
+    background-color: green;
+    height: 100px; 
+    padding: 0 1rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.title-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 2; 
+    text-align: center; 
+}
+
+.title-container h1 {
+    font-family: 'Caveat', sans-serif; 
+    font-size: 2rem; 
+    color: white; 
+    margin: 0;
+    text-transform: uppercase; 
+    font-weight: 700; 
+}
+
+.navbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-grow: 1;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #4caf50;
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+main {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    margin-top: 0;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-container {
+    width: 60%;
+    text-align: left;
+}
+
+.text-container h2 {
+    text-align: center;
+}
+
+.video-container {
+    width: 35%;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.navbar ul li a:hover {
+    background-color: #4caf50; 
+}
+
+.logo-container {
+    position: absolute; 
+    left: 20px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 2; 
+}
+
+.logo {
+    height: 100px; 
+    width: auto;
+}
+
+body {
+    padding-top: 0; 
+    padding-bottom: 0;
+}
+
+main {
+    background-color: #f0f0f0; 
+    padding: 2rem;
+    margin-top: 0; 
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.text-container {
+    width: 60%; 
+    text-align: left; 
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem; 
+    line-height: 1.6; 
+}
+
+.text-container h2 {
+    text-align: center; 
+}
+
+.video-container {
+    width: 35%; 
+}
+
+video {
+    width: 100%; 
+    height: auto; 
+}
+.help-section {
+    background-color: green; 
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 2rem 0;
+    border-radius: 10px; 
+}
+
+.help-section h2 {
+    font-size: 2rem;
+    color: white; 
+    margin-bottom: 1.5rem;
+}
+
+.donation-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+}
+
+.donation-card {
+    background-color: #4caf50; 
+    color: white; 
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+
+.donation-card:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background-color: #388e3c; 
+}
+
+.help-details {
+    background-color: #dff6f0; 
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+
+.help-details h2 {
+    font-size: 2rem;
+    color: #2b6e63; 
+    margin-bottom: 1rem;
+}
+
+.help-text {
+    margin-bottom: 2rem;
+    color: #333; 
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+.transit-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.transit-options p {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.button {
+    text-decoration: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.whatsapp-button {
+    background-color: #25d366; 
+}
+
+.whatsapp-button:hover {
+    background-color: #1da955;
+    transform: scale(1.05);
+}
+
+.email-button {
+    background-color: #0078d7; 
+}
+
+.email-button:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem; 
+    background-color: #4caf50; 
+    color: white; 
+    margin-top: auto; 
+    width: 100%; 
+    position: relative; 
+}
+
+footer p {
+    margin: 0; 
+    font-size: 1rem; 
+}
+
+footer::before {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #4caf50; 
+    width: 50px; 
+    margin: 0.5rem auto; 
+}
+
+.story-progress-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2rem 0;
+}
+
+/* Contenedor de las historias */
+.story-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+    width: 60%; 
+}
+
+/* Estilo de cada historia */
+.story {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.story h3 {
+    color: #4caf50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.story p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.story-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.progress-section {
+    width: 35%; 
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.progress-bar-container {
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.progress-bar {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+}
