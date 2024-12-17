@@ -79,6 +79,24 @@ def crear_causa():
     return jsonify({"id": nueva_causa.id, "mensaje": "Causa creada con éxito"}), 201
     
 @app.route('/donaciones', methods=['POST'])
+def registrar_donacion():
+    data = request.json
+    if not data or 'monto' not in data or 'id_usuario' not in data or 'id_causa' not in data:
+        return jsonify({"error": "Faltan datos obligatorios"}), 400
+    
+    nueva_donacion = Donacion(
+        monto=data['monto'],
+        id_usuario=data['id_usuario'],
+        id_causa=data['id_causa']
+    )
+    causa = Causa.query.get(data['id_causa'])
+    if not causa:
+        return jsonify({"error": "La causa no existe"}), 404
+    
+    causa.monto_recaudado += data['monto']
+    db.session.add(nueva_donacion)
+    db.session.commit()
+    return jsonify({"id": nueva_donacion.id, "mensaje": "Donación registrada con éxito"}), 201
 
 @app.errorhandler(404)
 def error_404(error):
