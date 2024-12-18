@@ -59,7 +59,6 @@ def causas():
     causas= Causa.query.all()
     return render_template('causas.html', causas=causas)
 
-
 @app.route('/causas', methods=['GET'])
 def listar_causas():
     causas = Causa.query.all()
@@ -91,7 +90,6 @@ def crear_causa():
 @app.route('/donaciones.html')
 def donaciones():
     return render_template('donaciones.html')
-
     
 @app.route('/donaciones', methods=['POST'])
 def registrar_donacion():
