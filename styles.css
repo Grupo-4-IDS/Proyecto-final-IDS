@@ -289,10 +289,10 @@ footer p {
 }
 
 .story-progress-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 2rem 0;
+    gap:2rem;
 }
 
 /* Contenedor de las historias */
@@ -310,6 +310,7 @@ footer p {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
+    width:70%;
 }
 
 .story h3 {
