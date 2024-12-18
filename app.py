@@ -29,6 +29,7 @@ class Donacion(db.Model):
     monto = db.Column(db.Numeric(11, 2), nullable=False)
     id_usuario = db.Column(db.Integer, db.ForeignKey('usuarios.id'), nullable=False)
     id_causa = db.Column(db.Integer, db.ForeignKey('causas.id'), nullable=False)
+    forma_pago = db.Column(db.String(50), nullable=False)
 
 @app.route('/')
 def index():
@@ -37,6 +38,18 @@ def index():
 @app.route('/usuarios.html')
 def usuarios():
     return render_template('usuarios.html')
+
+@app.route('/usuarios', methods=['GET'])
+def obtener_usuario():
+    nombre_usuario = request.args.get('usuario')
+    if not nombre_usuario:
+        return jsonify({"error": "Falta el nombre de usuario"}), 400
+    
+    usuario = Usuario.query.filter_by(usuario=nombre_usuario).first()
+    if not usuario:
+        return jsonify({"error": "Usuario no encontrado"}), 404
+    
+    return jsonify({"id": usuario.id, "usuario": usuario.usuario})
 
 @app.route('/usuarios', methods=['POST'])
 def registrar_usuario():
@@ -94,13 +107,14 @@ def donaciones():
 @app.route('/donaciones', methods=['POST'])
 def registrar_donacion():
     data = request.json
-    if not data or 'monto' not in data or 'id_usuario' not in data or 'id_causa' not in data:
+    if not data or 'monto' not in data or 'id_usuario' not in data or 'id_causa' not in data or 'forma_pago' not in data:
         return jsonify({"error": "Faltan datos obligatorios"}), 400
     
     nueva_donacion = Donacion(
         monto=data['monto'],
         id_usuario=data['id_usuario'],
-        id_causa=data['id_causa']
+        id_causa=data['id_causa'],
+        forma_pago=data['forma_pago']
     )
     causa = Causa.query.get(data['id_causa'])
     if not causa:
