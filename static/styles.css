@@ -389,3 +389,18 @@ footer p {
     padding:0.25rem 0.5rem;
     border-radius: 10px;
 }
+
+.form-container {
+    display: none;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.input-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin:0 auto;
+    width:70%;
+    gap: 1rem;
+}
