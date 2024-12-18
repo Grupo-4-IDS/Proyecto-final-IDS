@@ -15,3 +15,12 @@ CREATE TABLE Causas (
     foto TEXT,
     monto_recaudado NUMERIC(12, 2) DEFAULT 0
 );
+
+CREATE TABLE Donaciones (
+    ID SERIAL PRIMARY KEY,
+    monto NUMERIC(11, 2) NOT NULL,
+    fecha DATE NOT NULL DEFAULT CURRENT_DATE,
+    forma_pago VARCHAR(20) NOT NULL,
+    id_usuario INT REFERENCES Usuarios(ID) ON DELETE CASCADE, 
+    id_causa INT REFERENCES Causas(ID) ON DELETE CASCADE
+);
