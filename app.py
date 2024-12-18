@@ -34,6 +34,10 @@ class Donacion(db.Model):
 def index():
     return render_template('index.html')
 
+@app.route('/usuarios.html')
+def usuarios():
+    return render_template('usuarios.html')
+
 @app.route('/usuarios', methods=['POST'])
 def registrar_usuario():
     data = request.json
