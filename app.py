@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, abort, render_template, send_file
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://proyecto4:1234@db:5432/recudadacion_fondos'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://proyecto4:1234@db:5432/recaudacion_fondos'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -56,7 +56,8 @@ def registrar_usuario():
 
 @app.route('/causas.html')
 def causas():
-    return render_template('causas.html')
+    causas= Causa.query.all()
+    return render_template('causas.html', causas=causas)
 
 
 @app.route('/causas', methods=['GET'])
