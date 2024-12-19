@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort, render_template, send_file
+from flask import Flask, jsonify, request, render_template, send_file
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
