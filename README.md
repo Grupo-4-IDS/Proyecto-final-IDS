@@ -23,17 +23,17 @@ Antes de ejecutar el proyecto, asegúrate de tener los siguientes componentes in
 - **Docker Desktop** (si se utiliza Windows)
 - **WSL** (si se utiliza Windows)
 
-##Screenshots 
+## Screenshots 
 ![image](https://github.com/user-attachments/assets/3355a5e8-823f-40d6-8a3c-c6db85062d8c)
 ![image](https://github.com/user-attachments/assets/22afbfcc-bf5f-40c8-811f-d1456c6f1b0d)
 ![image](https://github.com/user-attachments/assets/72d8f115-3c88-4a7d-a0b7-e8326cc58299)
 
-##Pasos
--Descargar main
--Extraer archivo
--Navegar a la carpeta "Proyecto-final-IDS-main"
--En la terminal de bash correr "docker-compose up --build"
--Desde  navegador ir al puerto 5000 del localhost 
+## Pasos
+-**Descargar main**
+-**Extraer archivo**
+-**Navegar a la carpeta "Proyecto-final-IDS-main"**
+-**En la terminal de bash correr "docker-compose up --build"**
+-**Desde  navegador ir al puerto 5000 del localhost**
 
 ## Contacto 
 Cualquier consulta, puedes contactarnos:
