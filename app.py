@@ -22,14 +22,16 @@ class Causa(db.Model):
     descripcion = db.Column(db.Text, nullable=False)
     meta = db.Column(db.Numeric(11, 2), nullable=False)
     monto_recaudado = db.Column(db.Numeric(12, 2), nullable=False, default=0)
+    foto = db.Column(db.Text)
 
 class Donacion(db.Model):
     __tablename__ = 'donaciones'
     id = db.Column(db.Integer, primary_key=True)
     monto = db.Column(db.Numeric(11, 2), nullable=False)
+    fecha = db.Column(db.Date, nullable=False, default=db.func.current_date())
+    forma_pago = db.Column(db.String(50), nullable=False)
     id_usuario = db.Column(db.Integer, db.ForeignKey('usuarios.id'), nullable=False)
     id_causa = db.Column(db.Integer, db.ForeignKey('causas.id'), nullable=False)
-    forma_pago = db.Column(db.String(50), nullable=False)
 
 @app.route('/')
 def index():
