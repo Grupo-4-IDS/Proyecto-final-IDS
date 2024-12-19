@@ -24,9 +24,9 @@ Antes de ejecutar el proyecto, asegúrate de tener los siguientes componentes in
 ## Contacto 
 Cualquier consulta, puedes contactarnos:
 
--Geronimo Medina: gmedinam@fi.uba.ar 
--Martina Fanelli: mfanelli@fi.uba.ar
--Agustin Buttaro: abuttaro@fi.uba.ar
--Julieta Brunetti jbrunetti@fi.uba.ar
+- Geronimo Medina: gmedinam@fi.uba.ar 
+- Martina Fanelli: mfanelli@fi.uba.ar
+- Agustin Buttaro: abuttaro@fi.uba.ar
+- Julieta Brunetti jbrunetti@fi.uba.ar
 
 
